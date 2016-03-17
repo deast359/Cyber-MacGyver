@@ -2,26 +2,49 @@
 #define BACKGROUND_H
 
 #include "GameModel.h"
+#include "mainwindow.h"
 
-class Runner : public QLabel
+class Background
 {
-    Q_OBJECT
 
-    QLabel * display;
-    QPixmap * picture;
+    QLabel *display;
+    QString image;
+
 
 public:
 
-    Runner(MainWindow * parent) : Qlabel(parent)
+    Background(MainWindow *parent, QString picture, QRect rect)
     {
-        display = new Qlabel(parent);
+        image = picture;
+        display = new QLabel(parent);
         display->setScaledContents(true);
-        display->setGeometry(parent->x(),parent->y,parent->width(), parent->height());
-        display->setPixmap();
+        display->setGeometry(rect);
+        display->setPixmap(QPixmap(image));
     }
 
-    QLabel* getLabel() {return dispaly;}
+    QLabel* getLabel() {return display;}
 
 };
+
+//class Backdrop : Background
+//{
+//    Q_OBJECT
+
+//    QLabel * display;
+//    QString image;
+//    MainWindow * m;
+
+//public:
+
+//    Backdrop(MainWindow * parent, QString picture, QRect rect): Background()
+//    {
+//        m->parent();
+
+//        display->setPixmap(QPixmap(image);
+//    }
+
+
+
+//};
 
 #endif // BACKGROUND_H

@@ -14,9 +14,22 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    GameModel.cpp
+    GameModel.cpp \
+    Background.cpp \
+    Runner.cpp \
+    Scenery.cpp \
+    Obstacles.cpp
 
 HEADERS  += mainwindow.h \
-    GameModel.h
+    GameModel.h \
+    Background.h \
+    Runner.h \
+    Scenery.h \
+    Obstacles.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    resources.qrc
+
+QMAKE_CXXFLAGS += -std=c++0x
